@@ -1,0 +1,55 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Main View</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        see quotes.<br />
+        @*@ViewBag.quote*@
+
+        <table>
+            <tr>
+                <th>QuoteID</th>
+                <th>QuoteType</th>
+                <th>Contact</th>
+                <th>Task</th>
+                <th>DueDate</th>
+                <th>TaskType</th>
+            </tr>
+
+            @foreach (var tsk in ViewBag.quote)
+            {
+
+                <tr>
+                    <td>[@tsk.QuoteID]</td>
+                    <td>[@tsk.QuoteType]</td>
+                    <td>[@tsk.Contact]</td>
+                    <td>[@tsk.Task]</td>
+                    <td>[@tsk.DueDate]</td>
+                    <td>[@tsk.TaskType]</td>
+
+                </tr>
+            }
+        </table>
+</body>
+</html>

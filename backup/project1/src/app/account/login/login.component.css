@@ -1,0 +1,35 @@
+div.loginBoxOut {
+    text-align: center;
+    background-color: rgb(187, 200, 212);
+    border: 1px solid black;
+    margin-left : 30%;
+    margin-right : 30%;
+    margin-top : 10%;
+    border-radius: 2%;
+}
+div.loginBoxIn {
+    margin: 30px;
+    border-radius: 2%;
+}
+.button-submit {
+    color: darkblue;
+    margin:30px;
+    width:110px;
+    border: 1px solid darkblue;
+    border-radius: 2%;
+}
+h1.usernamePassword {
+    /* position: relative; */
+    /* float: right; */
+    font-size: small;
+    display:inline-block;
+    margin-left:30px;
+}
+
+#boxTemplate{
+    float: right;
+    position: relative;
+    padding-right: 35%;
+    width: 3px;
+    margin-right:80px;
+}

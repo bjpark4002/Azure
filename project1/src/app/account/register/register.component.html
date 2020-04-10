@@ -1,0 +1,56 @@
+<div class="loginBoxOut">
+    <div class="loginBoxIn">
+        <h1>Register</h1>
+        <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onRegisterSubmit()" novalidate >
+
+            <mat-form-field>
+                <input 
+                matInput 
+                formControlName="username"
+                [(ngModel)]="user.username" 
+                #emailRef 
+                placeholder="username" 
+                id = "username" 
+                required>
+            </mat-form-field> <br>
+
+
+            <mat-form-field>
+                <input 
+                matInput 
+                formControlName="email"
+                [(ngModel)]="user.email" 
+                #emailRef 
+                placeholder="Email" 
+                id = "email" 
+                required>
+            </mat-form-field> <br>
+
+            <mat-form-field>
+                <input 
+                matInput 
+                type="password" 
+                formControlName="password"
+                [(ngModel)]="user.password" 
+                #passwordRef 
+                placeholder="Password" 
+                id = "password" 
+                required>
+            </mat-form-field> <br>
+
+            <mat-form-field>
+                <input 
+                matInput 
+                type="password" 
+                formControlName="confirmpassword"
+                [(ngModel)]="user.confirmpassword" 
+                #confirmRef 
+                placeholder="Confirm" 
+                id= "confirm" 
+                required>
+            </mat-form-field> <br>
+            <button mat-flat-button type="submit" [disabled]="!registerForm.valid">Register</button> <br>
+        </form>
+    </div>
+</div>
+<button mat-raised-button routerLink="/login">Back to Login</button>

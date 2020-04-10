@@ -1,0 +1,46 @@
+
+
+.data-table{
+    width: 80%;
+    margin: 20px auto;
+}
+
+div.mainBox{
+
+    border: 1px solid lightgray;
+    margin-left:  50px;
+    margin-right: 50px;
+    height:500px;
+}
+div.titleBox{
+    background-color: rgba(223, 231, 227, 0.747);
+}
+b.tableTitle{
+    color:rgb(77, 77, 224);
+    font : bold;
+    font-size: medium;
+    margin-left : 30px;
+}
+button.titleButton{
+    float:right;
+    margin-right : 10px;
+}
+
+
+button.spacer{
+    margin-left : 15px;
+}
+
+mat-icon.iconSize{
+    background-color: transparent;
+    height:15px; 
+    width:15px; 
+    font-size:15px;
+    border-color: transparent;
+}
+
+.iconSize{
+    height:20px; 
+    width:20px; 
+    margin-left: 15px;
+}

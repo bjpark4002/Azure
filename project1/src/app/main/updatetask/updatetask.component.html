@@ -1,0 +1,86 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+
+<div class="addTask">
+
+    <div class="titleBox">
+        <b class='tableTitle'>Add Tasks</b>
+    </div>
+    <div>
+        <form (ngSubmit)="update()">
+
+            <mat-form-field>
+                <mat-label>Select Status</mat-label>
+                <mat-select [(value)]="selectedStatus">
+                    <mat-option value="Open">Open</mat-option>
+                    <mat-option value="Close">Close</mat-option>
+                </mat-select>
+            </mat-form-field> <br>
+
+            <mat-label>Quote Type</mat-label>
+            <mat-form-field>
+                <input matInput name="QuoteTypeName" [(ngModel)]="task.QuoteType" #QuoteTypeRef
+                    placeholder=" " id="QuoteType" required>
+            </mat-form-field>
+
+
+            <mat-label>Quote Num</mat-label>
+            <mat-form-field>
+                <input matInput name="QuoteNumName" [(ngModel)]="task.QuoteID" #QuoteNumRef
+                    placeholder=" " id="QuoteID" required>
+            </mat-form-field> <br>
+
+
+            <mat-label>Task Type</mat-label>
+            <mat-form-field>
+                <input matInput name="TaskTypeName" [(ngModel)]="task.TaskType" #TaskTypeRef
+                    placeholder=" " id="TaskType" required>
+            </mat-form-field> <br>
+
+
+            <mat-label>Contact Name</mat-label>
+            <mat-form-field>
+                <input matInput name="ContactNameName" [(ngModel)]="task.Contact" #ContactRef
+                    placeholder=" " id="Contact" >
+            </mat-form-field> <br>
+
+
+            <mat-label>Quote</mat-label>
+            <mat-form-field>
+                <input matInput name="QuoteName" [(ngModel)]="quote_var" #QuoteRef placeholder=" "
+                    id="Quote_" >
+            </mat-form-field> <br>
+
+
+
+            <div style="display:flex; align-items:center; ">
+                <mat-label>Due Date</mat-label>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="myDatePicker" [(ngModel)]="duedateVar" name="duedateName" [ngModel]="defaultDate">
+                    <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #myDatePicker></mat-datepicker>
+                </mat-form-field>
+
+                <ngb-timepicker [(ngModel)]="time" [meridian]="meridian" name="timePickerName"></ngb-timepicker>
+            </div>
+            <!-- <pre>Selected time: {{time | json}}</pre><br> -->
+
+
+
+            <label>Task Description</label><br>
+            <textarea style=" height: 200px; width:500px;" maxlength="100" [(ngModel)]="task.Task" name="textAreaName">Enter Description</textarea>
+            <br>
+            <button type="submit">Update</button>
+            <button mat-dialog-close >Cancel</button>
+
+
+        </form>
+
+
+        <!-- <button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
+            Meridian - {{meridian ? "ON" : "OFF"}}
+        </button> -->
+        <br>
+    </div>
+
+</div>

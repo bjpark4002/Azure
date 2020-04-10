@@ -1,0 +1,89 @@
+<div class="addTask">
+
+    <div class="titleBox">
+        <b class='tableTitle'>Add Tasks</b>
+    </div>
+    <div>
+
+        <form [formGroup]="addTaskForm" (ngSubmit)="addTaskForm.valid && addTask()" novalidate>
+            <mat-label>Status</mat-label>
+
+            <mat-form-field>
+                <mat-label>Select Status</mat-label>
+                <mat-select [(value)]="selectedStatus">
+                    <mat-option value="Open">Open</mat-option>
+                    <mat-option value="Close">Close</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+
+
+
+            <mat-label>Quote Type</mat-label>
+            <mat-form-field>
+                <input matInput formControlName="Quote_Type" [(ngModel)]="task.QuoteType" #QuoteTypeRef
+                    placeholder="Quote Type" id="QuoteType" required>
+            </mat-form-field>
+
+
+            <mat-label>Quote Num</mat-label>
+            <mat-form-field>
+                <input matInput formControlName="Quote_Id" [(ngModel)]="task.QuoteID" #QuoteNumRef
+                    placeholder="Quote Num" id="QuoteID" required>
+            </mat-form-field> <br>
+
+
+            <mat-label>Task Type</mat-label>
+            <mat-form-field>
+                <input matInput formControlName="Task_Type" [(ngModel)]="task.TaskType" #TaskTypeRef
+                    placeholder="Task Type" id="TaskType" required>
+            </mat-form-field> <br>
+
+
+            <mat-label>Contact Name</mat-label>
+            <mat-form-field>
+                <input matInput formControlName="Contact_Name" [(ngModel)]="task.Contact" #ContactRef
+                    placeholder="Contact Name" id="Contact" required>
+            </mat-form-field> <br>
+
+
+            <mat-label>Quote</mat-label>
+            <mat-form-field>
+                <input matInput formControlName="Quote_" [(ngModel)]="quote_var" #QuoteRef placeholder="Quote_"
+                    id="Quote_" required>
+            </mat-form-field> <br>
+
+
+            <mat-label>Due Date</mat-label>
+
+            <mat-form-field>
+                <!-- <input 
+                matInput 
+                formControlName="Due_Date"
+                [(ngModel)]="task.DueDate" 
+                #DueDateRef 
+                placeholder="DueDate" 
+                id = "DueDate" 
+                required> -->
+                <input matInput formControlName="Due_Date" [matDatepicker]="myDatePicker" #DueDateRef id="DueDate"
+                    [(ngModel)]="task.DueDate">
+                <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #myDatePicker></mat-datepicker>
+            </mat-form-field>
+            <br>
+
+
+            <mat-label>Task Description</mat-label>
+            <mat-form-field>
+                <input matInput formControlName="Task" [(ngModel)]="task.Task" #taskDescriptionRef
+                    placeholder="Task Description" id="Task" required>
+            </mat-form-field> <br>
+            <button mat-flat-button type="submit">Update</button>
+            <!-- <button>Cancel</button> -->
+
+
+
+        </form>
+    </div>
+
+</div>
